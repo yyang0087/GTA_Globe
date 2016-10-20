@@ -166,7 +166,7 @@
       
       xhr = new XMLHttpRequest();
       //xhr.open('GET', 'population909500.json', true);
-      xhr.open('GET', 'data_new6.json', true);
+      xhr.open('GET', '/data/data_new6.json', true);
 
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState === 4) {
@@ -183,7 +183,7 @@
           }
         }
       };
-      xhr.send(null);
+      xhr.send(9);
     }
 
   </script>
