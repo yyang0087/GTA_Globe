@@ -18,14 +18,21 @@ DAT.Globe = function(container, opts) {
   
   var colorFn = opts.colorFn || function(x) {
     var c = new THREE.Color();
-    c.setHSL( ( 0.6 - ( x * 0.5 ) ), 1.0, 0.5 );
+    //c.setRGB(1,1,0);
+    if(x>1.0) {
+      console.log(x);
+    }
+    //console.log(x);
+    //c.setHSL( 1.0, (1.0 - ( 1 / ((x)/(0.01)) ) ), 0.5-((x-1.5)/10));
+    c.setHSL( 1.0, 1.0, 0.8-(Math.sqrt(x))/2.5);
+    //c.setHSL( ( 0.6 - ( x * 0.5 ) ), 1.0, 0.5 );
     return c;
   };
   var imgDir = opts.imgDir || './';
 
   var Shaders = {
     'earth' : {
-      uniforms: {
+      uniforms: {  
         'texture': { type: 't', value: null }
       },
       vertexShader: [
@@ -104,7 +111,7 @@ DAT.Globe = function(container, opts) {
     shader = Shaders['earth'];
     uniforms = THREE.UniformsUtils.clone(shader.uniforms);
 
-    uniforms['texture'].value = THREE.ImageUtils.loadTexture(imgDir+'land.jpg');
+    uniforms['texture'].value = THREE.ImageUtils.loadTexture(imgDir+'Earth Map_Black.jpg');
 
     material = new THREE.ShaderMaterial({
 
