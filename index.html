@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <title>Terrorist Attacks Globe</title>
+    <title>Global Terrorism Attacks</title>
     <meta charset="utf-8">
     <style type="text/css">
       html {
@@ -95,21 +95,7 @@
         font-size: 23px;
         color: #fff;
       }
-      /*
-      #ce span {
-        display: none;
-      }
 
-      #ce {
-        width: 107px;
-        height: 55px;
-        display: block;
-        position: absolute;
-        bottom: 15px;
-        left: 20px;
-        background: url(ce.png);
-      }
-      */
 
     </style>
   </head>
@@ -134,11 +120,6 @@
   <div id="subTitle">
     This 3D globe shows the frequency of documented terrorist attacks on the Global Terrorism Database between 2012 and 2014.
   </div>
-
-
-  <a id="ce" href="http://www.chromeexperiments.com/globe">
-    <span>This is a fluffy experiment</span>
-  </a>
 
   <script type="text/javascript" src="third-party/Detector.js"></script>
   <script type="text/javascript" src="third-party/three.min.js"></script>
@@ -183,7 +164,6 @@
       
       xhr = new XMLHttpRequest();
       xhr.open('GET', 'data.json', true);
-      //xhr.open('GET', 'data_new6.json', true);
 
       xhr.onreadystatechange = function(e) {
         if (xhr.readyState === 4) {
