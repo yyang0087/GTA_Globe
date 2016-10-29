@@ -1,4 +1,4 @@
-# web.gl_Globe_Terrorism
+# GTA_Globe
 This 3D globe shows the frequency of documented terrorist attacks on the Global Terrorism Database between 2012 and 2014.
 
 
