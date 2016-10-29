@@ -203,6 +203,7 @@ DAT.Globe = function(container, opts) {
         this._morphTargetId += 1;
       }
       opts.name = opts.name || 'morphTarget'+this._morphTargetId;
+      console.log("in js "+opts.name);
     }
     var subgeo = new THREE.Geometry();
     for (i = 0; i < data.length; i += step) {
@@ -250,14 +251,15 @@ DAT.Globe = function(container, opts) {
   }
 
   function addPoint(lat, lng, size, color, subgeo) {
-
+    if(lat==0 && lng==0){
+      return;
+    }
     var phi = (90 - lat) * Math.PI / 180;
     var theta = (180 - lng) * Math.PI / 180;
 
     point.position.x = 200 * Math.sin(phi) * Math.cos(theta);
     point.position.y = 200 * Math.cos(phi);
     point.position.z = 200 * Math.sin(phi) * Math.sin(theta);
-
     point.lookAt(mesh.position);
 
     point.scale.z = Math.max( size, 0.1 ); // avoid non-invertible matrix
