@@ -61,4 +61,4 @@ for (var year in combined) {
 console.log(combined);
 console.log(final_data);
 
-download('data.json', JSON.stringify(final_data));
+//download('data.json', JSON.stringify(final_data));
